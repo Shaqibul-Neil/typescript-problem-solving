@@ -3,7 +3,7 @@ const filterEvenNumbers = (arr: number[]): number[] => {
 };
 
 const reverseString = (str: string): string => {
-  return `"${str.split("").reverse().join("")}"`;
+  return str.split("").reverse().join("");
 };
 
 type StringOrNumber = string | number;
