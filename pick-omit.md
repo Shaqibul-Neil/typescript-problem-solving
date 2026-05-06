@@ -100,17 +100,17 @@ DRY means:
 
 Using Pick and Omit:
 
-❌ No repeated fields
-❌ No manual syncing
+❌ No repeated fields,
+❌ No manual syncing,
 ❌ No hidden inconsistencies
 
 👉 Instead:
 
-✅ Reuse
-✅ Consistency
+✅ Reuse,
+✅ Consistency,
 ✅ Maintainability
 
-Need only some fields ➡️ Pick
+Need only some fields ➡️ Pick,
 Need everything except a few fields ➡️ Omit
 
 ## 🧾 Conclusion
