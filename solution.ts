@@ -18,22 +18,6 @@ const getProperty = <T, K extends keyof T>(obj: T, key: K): T[K] => {
   return obj[key];
 };
 
-/**
- * Problem 5:
-Define an interface Book with properties title, author, and publishedYear. Create a function toggleReadStatus that accepts a Book object and returns a new object with an added isRead property (boolean), defaulting to true.
-
-// Sample Input:
-const myBook = { title: "TypeScript Guide", author: "Jane Doe", publishedYear: 2024 };
-toggleReadStatus(myBook);
-
-// Sample Output:
-{
-  title: "TypeScript Guide",
-  author: "Jane Doe",
-  publishedYear: 2024,
-  isRead: true
-}
- */
 interface Book {
   title: string;
   author: string;
@@ -42,11 +26,35 @@ interface Book {
 const toggleReadStatus = (obj: Book): Book & { isRead: boolean } => {
   return { ...obj, isRead: true };
 };
+/*
+Problem 6:
+Create a class Person with a name and age. Then, create a subclass Student that adds a grade property. Include a method getDetails in the Student class that returns a string with the student's name, age, and grade.
 
-const myBook = {
-  title: "TypeScript Guide",
-  author: "Jane Doe",
-  publishedYear: 2024,
-};
+// Sample Input:
+const student = new Student("Alice", 20, "A");
+student.getDetails();
 
-console.log(toggleReadStatus(myBook));
+// Sample Output:
+"Name: Alice, Age: 20, Grade: A";
+*/
+class Person {
+  constructor(
+    public name: string,
+    public age: number,
+  ) {}
+}
+class Student extends Person {
+  constructor(
+    name: string,
+    age: number,
+    public grade: string,
+  ) {
+    super(name, age);
+  }
+  getDetails(): string {
+    return `Name: ${this.name}, Age: ${this.age}, Grade: ${this.grade}`;
+  }
+}
+const student = new Student("Alice", 20, "A");
+const res = student.getDetails();
+console.log(res);
