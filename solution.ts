@@ -46,31 +46,8 @@ class Student extends Person {
   }
 }
 
-/**
- * Problem 7:
-Create a function getIntersection that takes two arrays of numbers and returns a new array containing only the elements that are present in both arrays.
-
-// Sample Input:
-getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7])
-
-// Sample Output:
-[3, 4, 5]
- */
-const start = performance.now();
 const getIntersection = (arr1: number[], arr2: number[]): number[] => {
-  return arr1.filter((num) => arr2.includes(num));
-};
-
-console.log(getIntersection([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
-const end = performance.now();
-console.log("1", end - start);
-
-const start2 = performance.now();
-const getIntersection2 = (arr1: number[], arr2: number[]): number[] => {
   const set1 = new Set(arr1);
   const commonArray = arr2.filter((num) => set1.has(num));
   return commonArray;
 };
-console.log(getIntersection2([1, 2, 3, 4, 5], [3, 4, 5, 6, 7]));
-const end2 = performance.now();
-console.log("2", end2 - start2);
